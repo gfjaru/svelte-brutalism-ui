@@ -1,0 +1,53 @@
+@import '../../styles/global.scss';
+@import '../../styles/mixins.scss';
+
+.btn {
+  cursor: pointer;
+
+  display: inline-block;
+  padding: 12px 16px;
+
+  font-family: inherit;
+  letter-spacing: 1px;
+  text-decoration: none;
+
+  color: var(--base07);
+
+  background-color: unset;
+
+  border: 2px solid var(--base01);
+  @include box-shadow-brutalism(2px, var(--base01));
+
+  &.primary {
+    background-color: var(--base0D);
+    color: hsl(from var(--base0D) h s calc(l - 5%));
+  }
+
+  &.danger {
+    background-color: var(--base08);
+    color: hsl(from var(--base08) h s calc(l - 5%));
+  }
+
+  &.warning {
+    background-color: var(--base09);
+    color: hsl(from var(--base09) h s calc(l - 5%));
+  }
+
+  &.success {
+    background-color: var(--base0B);
+    color: hsl(from var(--base0B) h s calc(l - 5%));
+  }
+
+  &.block {
+    display: block;
+    width: 100%;
+    text-align: center;
+  }
+
+  &:active {
+    position: relative;
+    box-shadow: unset !important;
+    left: 2px;
+    top: 2px;
+  }
+}
