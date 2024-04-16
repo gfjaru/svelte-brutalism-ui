@@ -1,14 +1,19 @@
 import type { Meta, StoryObj } from '@storybook/svelte';
-import Button from './index.svelte';
-import { ButtonVariants } from './button.js';
+import Button, { ButtonTypes, ButtonVariants } from './index.svelte';
 
 const meta = {
   title: 'Components UI/Button',
   component: Button,
   tags: ['autodocs'],
   argTypes: {
+    type: {
+      control: { type: 'select' },
+      defaultValue: ButtonTypes[0],
+      options: ButtonTypes,
+    },
     variant: {
       control: { type: 'select' },
+      defaultValue: ButtonVariants[0],
       options: ButtonVariants,
     },
   },

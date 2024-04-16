@@ -1,0 +1,17 @@
+$brutalism-padding-size: 12px 16px;
+$brutalism-border-size: 2px;
+
+@mixin brutalism-active-state {
+  &:active {
+    position: relative;
+    box-shadow: unset !important;
+    left: 2px;
+    top: 2px;
+  }
+}
+
+@mixin brutalism-box-shadow($size, $color) {
+  box-shadow: $size $size 0px 0px $color;
+  -webkit-box-shadow: $size $size 0px 0px $color;
+  -moz-box-shadow: $size $size 0px 0px $color;
+}

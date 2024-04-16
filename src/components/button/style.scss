@@ -1,11 +1,11 @@
+@import '../../styles/reusables.scss';
 @import '../../styles/global.scss';
-@import '../../styles/mixins.scss';
 
 .btn {
   cursor: pointer;
 
   display: inline-block;
-  padding: 12px 16px;
+  padding: $brutalism-padding-size;
 
   font-family: inherit;
   letter-spacing: 1px;
@@ -15,8 +15,8 @@
 
   background-color: unset;
 
-  border: 2px solid var(--base01);
-  @include box-shadow-brutalism(2px, var(--base01));
+  border: $brutalism-border-size solid var(--base01);
+  @include brutalism-box-shadow(2px, var(--base01));
 
   &.primary {
     background-color: var(--base0D);
@@ -44,10 +44,5 @@
     text-align: center;
   }
 
-  &:active {
-    position: relative;
-    box-shadow: unset !important;
-    left: 2px;
-    top: 2px;
-  }
+  @include brutalism-active-state;
 }
