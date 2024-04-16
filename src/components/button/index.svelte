@@ -1,8 +1,7 @@
 <script lang="ts" context="module">
-	export const ButtonTypes = ['button', 'submit', 'reset'] as const;
-	export type ButtonTypesType = (typeof ButtonTypes)[number];
+	import { ButtonTypes, ButtonVariants } from './constants.js';
 
-	export const ButtonVariants = ['primary', 'danger', 'warning', 'success'] as const;
+	export type ButtonTypesType = (typeof ButtonTypes)[number];
 	export type ButtonVariantsType = (typeof ButtonVariants)[number];
 </script>
 
@@ -10,8 +9,13 @@
 	import type { MouseEventHandler } from 'svelte/elements';
 	import './style.scss';
 
+	// Set as block component
 	export let block: boolean = false;
+
+	// Add more class to button / a element.
 	export let className: string = '';
+
+	// Set disabled props
 	export let disabled: boolean = false;
 
 	/**
@@ -20,12 +24,19 @@
 	 */
 	export let label: string = '';
 
-	// Link props
+	// Convert button to link
 	export let href: string = '';
+
+	// Property for target on anchor tag, will not work if href not exist
 	export let target: string = '';
 
+	// On click event
 	export let onClick: MouseEventHandler<HTMLButtonElement> = () => undefined;
+
+	// Button HTML type
 	export let type: ButtonTypesType = 'button';
+
+	// Button color variant
 	export let variant: ButtonVariantsType = 'primary';
 
 	const classNames = ['btn', variant, block ? 'block' : null, className].filter(Boolean);
@@ -44,6 +55,3 @@
 		{/if}
 	</button>
 {/if}
-
-<style lang="scss" global src="./style.scss">
-</style>
