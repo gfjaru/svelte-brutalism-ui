@@ -1,12 +1,13 @@
 <script lang="ts">
 	import type { MouseEventHandler } from 'svelte/elements';
 	import './style.scss';
-	import type { ButtonVariantsType } from './button.ts';
+	import type { ButtonVariantsType, ButtonTypesType } from './button.ts';
 
 	export let block: boolean = false;
 	export let label: string = '';
 	export let href: string = '';
 	export let onClick: MouseEventHandler<HTMLButtonElement> = () => undefined;
+	export let type: 'button' | 'submit' | 'reset' | null | undefined = 'button';
 	export let variant: ButtonVariantsType = 'primary';
 
 	const classNames = ['btn', variant, block ? 'block' : null].filter(Boolean);
@@ -17,7 +18,7 @@
 		{label}
 	</a>
 {:else}
-	<button on:click={onClick} class={classNames.join(' ')}>
+	<button on:click={onClick} class={classNames.join(' ')} {type}>
 		{label}
 	</button>
 {/if}

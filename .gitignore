@@ -12,3 +12,5 @@ vite.config.ts.timestamp-*
 
 *storybook.log
 storybook-static
+
+src/components/*.d.ts
