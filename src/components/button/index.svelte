@@ -1,7 +1,7 @@
 <script lang="ts">
 	import type { MouseEventHandler } from 'svelte/elements';
 	import './style.scss';
-	import type { ButtonVariantsType, ButtonTypesType } from './button.ts';
+	import type { ButtonVariantsType } from './button.ts';
 
 	export let block: boolean = false;
 	export let label: string = '';
